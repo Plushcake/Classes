@@ -18,16 +18,7 @@ class PrintEditionItem {
     return number;
   }
   get state() {
-    const sherlock = new PrintEditionItem(
-      "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
-      2019,
-      1008
-    );
-
-    console.log(sherlock.releaseDate); //2019
-    console.log(sherlock.state); //100
-    sherlock.fix();
-    console.log(sherlock.state); //100
+    return this._state;
   }
 }
 class Magazine extends PrintEditionItem {
@@ -40,7 +31,7 @@ class Magazine extends PrintEditionItem {
   }
 }
 class Book extends PrintEditionItem {
-  constructor(name, releaseDate, pagesCount, author) {
+  constructor(author, name, releaseDate, pagesCount) {
     this.name = name;
     this.releaseDate = releaseDate;
     this.pagesCount = pagesCount;
@@ -73,18 +64,6 @@ class DetectiveBook extends Book {
     this.pagesCount = pagesCount;
   }
 }
-const picknick = new FantasticBook(
-  "Аркадий и Борис Стругацкие",
-  "Пикник на обочине",
-  1972,
-  168
-);
-
-console.log(picknick.author); //"Аркадий и Борис Стругацкие"
-picknick.state = 10;
-console.log(picknick.state); //10
-picknick.fix();
-console.log(picknick.state); //15
 
 class Library {
   constructor(name) {
