@@ -59,15 +59,28 @@ class Library {
     this.books = [];
   }
   addBook(book) {
-    if (book > 30) {
+    if (book.state > 30) {
       this.books.push(book);
     }
   }
   findBookBy(type, value) {
-    for (let i = 0; i < this.books.length; i++) {}
+    for (let i = 0; i < this.books.length; i++) {
+      if (this.books[i][type] === value) {
+        return this.books;
+      }
+    }
+    return null;
   }
   giveBookByName(bookName) {
-    const index = this.books.findIndex((book) => book.bookName === bookName);
-    return this.books.splice(index, 1)[0];
+    //const index = this.books.findIndex((book) => book.bookName === bookName);
+    //return this.books.splice(index, 1)[0];
+    for (let i = 0; i < this.books.length; i++) {
+      if (this.books[i].name === bookName) {
+        return this.books.splice(bookName, 1);
+      } else {
+        this.books[i].name != bookName;
+        return null;
+      }
+    }
   }
 }
