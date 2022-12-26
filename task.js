@@ -66,7 +66,7 @@ class Library {
   findBookBy(type, value) {
     for (let i = 0; i < this.books.length; i++) {
       if (this.books[i][type] === value) {
-        return this.books;
+        return this.books[i];
       }
     }
     return null;
@@ -78,5 +78,13 @@ class Library {
       }
     }
     return null;
+  }
+}
+
+//Задание 3.
+
+class Student {
+  constructor(name) {
+    this.name = name;
   }
 }
