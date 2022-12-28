@@ -74,7 +74,7 @@ class Library {
   giveBookByName(bookName) {
     for (let i = 0; i < this.books.length; i++) {
       if (this.books[i].name === bookName) {
-        return this.books.splice(0, 1)[0];
+        return this.books.splice(i, 1)[0];
       }
     }
     return null;
@@ -86,5 +86,11 @@ class Library {
 class Student {
   constructor(name) {
     this.name = name;
+    this.evaluation = [];
+  }
+
+  evaluationError(number) {
+    if (number < 1 || number > 5)
+      throw new Error("Ошибка, оценка должна быть числом от 1 до 5");
   }
 }
